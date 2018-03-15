@@ -198,10 +198,10 @@ void RenderDeviceGL4::initStates()
 {
 	glPixelStorei( GL_UNPACK_ALIGNMENT, 1 );
 	GLint value;
-	glGetIntegerv( GL_SAMPLE_BUFFERS, &value );
+	glGetIntegerv( GL_SAMPLE_BUFFERS, &value );//GL_SAMPLE_BUFFERS: number of sample buffers associated with the framebuffer
 	_defaultFBOMultisampled = value > 0;
 	GLboolean doubleBuffered;
-	glGetBooleanv( GL_DOUBLEBUFFER, &doubleBuffered );
+	glGetBooleanv( GL_DOUBLEBUFFER, &doubleBuffered );//GL_DOUBLEBUFFER: whether double buffering is supported.
 	_doubleBuffered = doubleBuffered != 0;
 	// Get the currently bound frame buffer object to avoid reset to invalid FBO
 	glGetIntegerv( GL_FRAMEBUFFER_BINDING_EXT, &_defaultFBO );
@@ -212,8 +212,8 @@ bool RenderDeviceGL4::init()
 {
 	bool failed = false;
 
-	char *vendor = (char *)glGetString( GL_VENDOR );
-	char *renderer = (char *)glGetString( GL_RENDERER );
+	char *vendor = (char *)glGetString( GL_VENDOR );//Returns the company responsible for this GL implementation. This name does not change from release to release.
+	char *renderer = (char *)glGetString( GL_RENDERER );//  name of the renderer. This name is typically specific to a particular configuration of a hardware platform. 
 	char *version = (char *)glGetString( GL_VERSION );
 
 	if( !version || !renderer || !vendor )
