@@ -214,51 +214,85 @@ public:
 	
 	// Buffers
 	void beginRendering();
+	//创建一个新的vao,glGenVertexArrays
 	uint32 beginCreatingGeometry( uint32 vlObj );
+	//使用当前注册到RDIGeometryInfoGL4对象中的信息，调用相应相应gl接口更新vao状态
 	void finishCreatingGeometry( uint32 geoObj );
+	//设置RDIGeometryInfoGL4对象中vertex buffer部分信息
 	void setGeomVertexParams( uint32 geoObj, uint32 vbo, uint32 vbSlot, uint32 offset, uint32 stride );
+	//设置RDIGeometryInfoGL4对象中index buffer部分信息
 	void setGeomIndexParams( uint32 geoObj, uint32 indBuf, RDIIndexFormat format );
+	//销毁vao,并且释放该vao引用的其它buffer对象的使用权(buffer有引用计数，其实释放的实现就是减少计数)
 	void destroyGeometry(uint32 &geoObj, bool destroyBindedBuffers );
 
+	//create RDIBufferGL4 type is vb, opengl create too
 	uint32 createVertexBuffer( uint32 size, const void *data );
+	//create RDIBufferGL4 type is ib, opengl create too
 	uint32 createIndexBuffer( uint32 size, const void *data );
+	//create RDITextureBufferGL4, opengl create new texture obj and texture buffer obj,and bind then
 	uint32 createTextureBuffer( TextureFormats::List format, uint32 bufSize, const void *data );
+	//创建一个 RDIShaderStorageGL4 GL_SHADER_STORAGE_BUFFER
 	uint32 createShaderStorageBuffer( uint32 size, const void *data );
+	//如果buffer不被引用，销毁
 	void destroyBuffer(uint32 &bufObj );
+	//glDeleteTextures直接删除texture  RDITextureBufferGL4::destroyBuffer取消一个引用
 	void destroyTextureBuffer( uint32& bufObj );
+	//glBufferData or glBufferSubData
 	void updateBufferData( uint32 geoObj, uint32 bufObj, uint32 offset, uint32 size, void *data );
+	// glMapBufferRange, map一个buffer并返回其内存
 	void *mapBuffer( uint32 geoObj, uint32 bufObj, uint32 offset, uint32 size, RDIBufferMappingTypes mapType );
+	// glUnmapBuffer
 	void unmapBuffer( uint32 geoObj, uint32 bufObj );
 
 	// Textures
 	uint32 calcTextureSize( TextureFormats::List format, int width, int height, int depth );
+	//create new RDITextureGL4
 	uint32 createTexture( TextureTypes::List type, int width, int height, int depth, TextureFormats::List format,
 	                      bool hasMips, bool genMips, bool compress, bool sRGB );
+	//update texture data 
 	void uploadTextureData( uint32 texObj, int slice, int mipLevel, const void *pixels );
+	// glDeleteTextures remove RDITextureGL4
 	void destroyTexture( uint32 &texObj );
 	void updateTextureData( uint32 texObj, int slice, int mipLevel, const void *pixels );
 	bool getTextureData( uint32 texObj, int slice, int mipLevel, void *buffer );
+	//获取该对象创建的texture总内存量
 	uint32 getTextureMem() const { return _textureMem; }
+	// ... ? glEGLImageTargetTexture2DOES ...?
 	void bindImageToTexture( uint32 texObj, void* eglImage );
 
 	// Shaders
+	//createShaderProgram  RDIShaderGL4  RDIInputLayoutGL4 infos.
 	uint32 createShader( const char *vertexShaderSrc, const char *fragmentShaderSrc, const char *geometryShaderSrc,
 						 const char *tessControlShaderSrc, const char *tessEvaluationShaderSrc, const char *computeShaderSrc );
+	//remove RDIShaderGL4 object
 	void destroyShader(uint32 &shaderId );
+	// glUseProgram( RDIShaderGL4::oglProgramObj ) 
 	void bindShader( uint32 shaderId );
+	//get last shader log
 	std::string getShaderLog() const { return _shaderLog; }
+	//return glGetUniformLocation
 	int getShaderConstLoc( uint32 shaderId, const char *name );
+	//return glGetUniformLocation
 	int getShaderSamplerLoc( uint32 shaderId, const char *name );
+	// ... ?? glGetProgramResourceIndex ，跟计算着色器和SSBO有关系
 	int getShaderBufferLoc( uint32 shaderId, const char *name );
+	//glUniform1fv[n][t]
 	void setShaderConst( int loc, RDIShaderConstType type, void *values, uint32 count = 1 );
+	//glUniform1i, 更新texture uniform引用另一个texture
 	void setShaderSampler( int loc, uint32 texUnit );
 	const char *getDefaultVSCode();
 	const char *getDefaultFSCode();
+	//跟计算着色器相关
 	void runComputeShader( uint32 shaderId, uint32 xDim, uint32 yDim, uint32 zDim );
 
 	// Renderbuffers
+	/*
+		create RDIRenderBufferGL4
+		主要是创建frame buffer 和 texture buffer， 和用以多重采样的frame buffer 和 render buffer
+	*/
 	uint32 createRenderBuffer( uint32 width, uint32 height, TextureFormats::List format,
 	                           bool depth, uint32 numColBufs, uint32 samples );
+	//销毁删除 createRenderBuffer 所申请的所有opengl对象
 	void destroyRenderBuffer(uint32 &rbObj );
 	uint32 getRenderBufferTex( uint32 rbObj, uint32 bufIndex );
 	void setRenderBuffer( uint32 rbObj );
@@ -327,7 +361,7 @@ protected:
 	bool applyVertexLayout( RDIGeometryInfoGL4 &geo );
 	void applySamplerState( RDITextureGL4 &tex );
 	void applyRenderStates();
-
+	//创建一个RDIBufferGL4,并且在opengl层也创建，返回一个内部资源编号
 	inline uint32 createBuffer( uint32 type, uint32 size, const void *data );
 
 	inline void	  decreaseBufferRefCount( uint32 bufObj );
