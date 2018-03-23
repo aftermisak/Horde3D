@@ -144,7 +144,10 @@ public:
 	inline RenderDeviceInterface *getRenderDevice() const { return _renderDevice; }
 
 	unsigned char *useScratchBuf( uint32 minSize, uint32 alignment );
-	
+	/*
+		createRenderDevice
+		registerVertexLayout
+	*/
 	bool init( RenderBackendType::List type );
 	void initStates();
 

@@ -229,15 +229,15 @@ private:
 
 struct DeviceCaps
 {
-	uint16	maxJointCount;
-	uint16	maxTexUnitCount;
-	bool	texFloat;
-	bool	texNPOT;
-	bool	rtMultisampling;
-	bool	geometryShaders;
-	bool	tesselation;
-	bool	computeShaders;
-	bool	instancing;
+	uint16	maxJointCount;//?
+	uint16	maxTexUnitCount;//?
+	bool	texFloat;//当前图形引擎是否支持浮点型texture数据
+	bool	texNPOT;//(Non-Power-Of-Two) 是否支持大小不是2的整数次方的texture
+	bool	rtMultisampling;//是否支持多重采用
+	bool	geometryShaders;//是否支持几何作色器
+	bool	tesselation;//是否支持Tessellation操作
+	bool	computeShaders;//是否支持计算作色器
+	bool	instancing;//?好像没用， 是否支持GPU Instancing，是一种新的Draw Call Batching方式
 };
 
 
