@@ -218,7 +218,7 @@ public:
 	uint32 beginCreatingGeometry( uint32 vlObj );
 	//使用当前注册到RDIGeometryInfoGL4对象中的信息，调用相应相应gl接口更新vao状态
 	void finishCreatingGeometry( uint32 geoObj );
-	//设置RDIGeometryInfoGL4对象中vertex buffer部分信息
+	//设置RDIGeometryInfoGL4对象中vertex buffer部分信息，就是向一个vao绑定一个vbo的信息
 	void setGeomVertexParams( uint32 geoObj, uint32 vbo, uint32 vbSlot, uint32 offset, uint32 stride );
 	//设置RDIGeometryInfoGL4对象中index buffer部分信息
 	void setGeomIndexParams( uint32 geoObj, uint32 indBuf, RDIIndexFormat format );

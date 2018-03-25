@@ -145,13 +145,29 @@ public:
 
 	unsigned char *useScratchBuf( uint32 minSize, uint32 alignment );
 	/*
-		createRenderDevice
-		registerVertexLayout
+		this->createRenderDevice 创建渲染接口实例
+		检查对一些渲染技术的支持，比如 floating point texture，  No non-Power-of-two texture，multisampling
+		_renderDevice->registerVertexLayout 注册顶点属性信息 attribsPosOnly   attribsOverlay  attribsModel  attribsParticle
+		编译链接默认着色器，并保存期uniform等信息
+		创建shadow map的renderbuffer
+		创建默认的 shadow map texture
+		创建用来绘制overlay quads的 vertex array object ->_overlayGeo
+			创建index buffer  -> _quadIdxBuf,并且设置相应的值
+			创建vertex buffer -> _overlayVB
+			将上面的信息注册给_overlayGeo
+		同样创建 粒子系统用的 vertex arra object ->_particleGeo
+			...相关顶点信息
+		this->createPrimitives 创建了一堆东西
+		this->useScratchBuf
+		Reset states by this->finishRendering
+
 	*/
 	bool init( RenderBackendType::List type );
+	// only call _renderDevice->initStates();
 	void initStates();
-
+	
 	void drawAABB( const Vec3f &bbMin, const Vec3f &bbMax );
+	//lcxing
 	void drawSphere( const Vec3f &pos, float radius );
 	void drawCone( float height, float fov, const Matrix4f &transMat );
 	
