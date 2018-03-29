@@ -166,16 +166,23 @@ public:
 	// only call _renderDevice->initStates();
 	void initStates();
 	
+	//用 _cubeGeo 绘制一个正交正六面体
 	void drawAABB( const Vec3f &bbMin, const Vec3f &bbMax );
-	//lcxing
+	//用 _sphereGeo 绘制一个椭球
 	void drawSphere( const Vec3f &pos, float radius );
+	//用 _coneGeo绘制一个椎体
 	void drawCone( float height, float fov, const Matrix4f &transMat );
 	
+	//创建新的program和一套shader集合, 并且获取兵保存一堆预定义uniform信息
 	bool createShaderComb( ShaderCombination &sc, const char *vertexShader, const char *fragmentShader, const char *geometryShader,
 						   const char *tessControlShader, const char *tessEvaluationShader, const char *computeShader );
+	//释放program
 	void releaseShaderComb( ShaderCombination &sc );
+	//使用一个新的program
 	void setShaderComb( ShaderCombination *sc );
+	//提交一堆预定义uniform(如果标记发生了改变需要提交)
 	void commitGeneralUniforms();
+	//设置一个新的材质 this->setMaterialRec
 	bool setMaterial( MaterialResource *materialRes, const std::string &shaderContext );
 	
 	bool createShadowRB( uint32 width, uint32 height );

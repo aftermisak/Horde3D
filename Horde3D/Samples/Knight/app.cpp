@@ -37,6 +37,7 @@ KnightSample::KnightSample( int argc, char** argv ) :
     _curPipeline = 2;
 }
 
+static H3DRes texture;
 
 bool KnightSample::initResources()
 {	
@@ -60,6 +61,11 @@ bool KnightSample::initResources()
     // Particle system
 	H3DRes particleSysRes = h3dAddResource( H3DResTypes::SceneGraph, "particles/particleSys1/particleSys1.scene.xml", 0 );
 
+	//lcx 
+	//texture = h3dAddResource(H3DResTypes::Material, "overlays/panel.material.xml", 0);
+	texture = h3dAddResource(H3DResTypes::Material, "textures/models/layingrock.material.xml", 0);
+	//end lcx
+
     // Help info
     _helpLabels[_helpRows-1] = "1/2:"; _helpValues[_helpRows-1] = "Animation blending";
 
@@ -77,21 +83,21 @@ bool KnightSample::initResources()
 	_cam = h3dAddCameraNode( H3DRootNode, "Camera", getPipelineRes() );
 	//h3dSetNodeParamI( _cam, H3DCamera::OccCullingI, 1 );
 
-    // Add environment
-	H3DNode env = h3dAddNodes( H3DRootNode, envRes );
-	h3dSetNodeTransform( env, 0, -20, 0, 0, 0, 0, 20, 20, 20 );
+ //   // Add environment
+	//H3DNode env = h3dAddNodes( H3DRootNode, envRes );
+	//h3dSetNodeTransform( env, 0, -20, 0, 0, 0, 0, 20, 20, 20 );
 
-    // Add knight
-	_knight = h3dAddNodes( H3DRootNode, knightRes );
-	h3dSetNodeTransform( _knight, 0, 0, 0, 0, 180, 0, 0.1f, 0.1f, 0.1f );
-	h3dSetupModelAnimStage( _knight, 0, knightAnim1Res, 0, "", false );
-	h3dSetupModelAnimStage( _knight, 1, knightAnim2Res, 0, "", false );
+ //   // Add knight
+	//_knight = h3dAddNodes( H3DRootNode, knightRes );
+	//h3dSetNodeTransform( _knight, 0, 0, 0, 0, 180, 0, 0.1f, 0.1f, 0.1f );
+	//h3dSetupModelAnimStage( _knight, 0, knightAnim1Res, 0, "", false );
+	//h3dSetupModelAnimStage( _knight, 1, knightAnim2Res, 0, "", false );
 
-    // Attach particle system to hand joint
-	h3dFindNodes( _knight, "Bip01_R_Hand", H3DNodeTypes::Joint );
-	H3DNode hand = h3dGetNodeFindResult( 0 );
-	_particleSys = h3dAddNodes( hand, particleSysRes );
-	h3dSetNodeTransform( _particleSys, 0, 40, 0, 90, 0, 0, 1, 1, 1 );
+ //   // Attach particle system to hand joint
+	//h3dFindNodes( _knight, "Bip01_R_Hand", H3DNodeTypes::Joint );
+	//H3DNode hand = h3dGetNodeFindResult( 0 );
+	//_particleSys = h3dAddNodes( hand, particleSysRes );
+	//h3dSetNodeTransform( _particleSys, 0, 40, 0, 90, 0, 0, 1, 1, 1 );
 
 	// Add light source
     H3DNode light = h3dAddLightNode( H3DRootNode, "Light1", lightMatRes, "LIGHTING", "SHADOWMAP" );
@@ -110,6 +116,7 @@ bool KnightSample::initResources()
 	h3dSetMaterialUniform( matRes, "hdrExposure", 2.5f, 0, 0, 0 );
 	h3dSetMaterialUniform( matRes, "hdrBrightThres", 0.5f, 0, 0, 0 );
 	h3dSetMaterialUniform( matRes, "hdrBrightOffset", 0.08f, 0, 0, 0 );
+
 	
 	return true;
 }
@@ -165,4 +172,16 @@ void KnightSample::update()
 		_text << fixed << setprecision( 2 ) << "Weight: " << _weight;
         h3dutShowText( _text.str().c_str(), 0.175f, 0.26f, 0.026f, 1, 1, 1, _fontMatRes );
 	}
+	
+	//lcx
+	const float ww = (float)h3dGetNodeParamI(_cam, H3DCamera::ViewportWidthI) /
+		(float)h3dGetNodeParamI(_cam, H3DCamera::ViewportHeightI);
+	const float verts[] = {
+		ww - 0.29f, 0.87f, 0, 1,
+		ww - 0.29f, 0.97f, 0, 0,
+		ww - 0.03f, 0.97f, 1, 0,
+		ww - 0.03f, 0.87f, 1, 1
+	};
+	h3dShowOverlays(verts, 4, 1.f, 1.f, 1.f, 1.f, texture, 0);
+	//end lcx
 }
