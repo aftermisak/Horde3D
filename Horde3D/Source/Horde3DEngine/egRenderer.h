@@ -255,21 +255,22 @@ protected:
 	
 	RenderDeviceInterface		       *_renderDevice;
 
-	std::vector< RenderFuncListItem >  _renderFuncRegistry;
+	std::vector< RenderFuncListItem >  _renderFuncRegistry;//保存着一些回调监听，在某个渲染的函数中，会回调
 	
-	unsigned char                      *_scratchBuf;
-	uint32                             _scratchBufSize;
+	unsigned char                      *_scratchBuf;//一个堆上的buff，但不是Render内部用，提供给接口给外不用
+	uint32                             _scratchBufSize;//上面那个buff的当前容量
 
+	//视图变换，投影变化等相关矩阵
 	Matrix4f                           _viewMat, _viewMatInv, _projMat, _viewProjMat, _viewProjMatInv;
 	
 	std::vector< PipeSamplerBinding >  _pipeSamplerBindings;
 	std::vector< char >                _occSets;  // Actually bool
 	std::vector< OccProxy >            _occProxies[2];  // 0: renderables, 1: lights
 	
-	std::vector< OverlayBatch >        _overlayBatches;
-	OverlayVert                        *_overlayVerts;
-	uint32							   _overlayGeo;
-	uint32                             _overlayVB;
+	std::vector< OverlayBatch >        _overlayBatches;//需要绘制的overlay元素，在添加新overlay绘制元素时，通过能不能和当前最后一个信息进行batch来实现batch draw
+	OverlayVert                        *_overlayVerts;//overlay的顶点数据，预先分配了一个很大的尺寸
+	uint32							   _overlayGeo;//overlay的vertex array object
+	uint32                             _overlayVB;//overlay的vertex buffer
 	
 	// standard geometry
 	uint32								_particleGeo;
@@ -278,11 +279,11 @@ protected:
 	uint32								_coneGeo;
 	uint32								_FSPolyGeo;
 
-	uint32                             _shadowRB;
-	uint32                             _frameID;
-	uint32                             _defShadowMap;
-	uint32                             _quadIdxBuf;
-	uint32                             _particleVBO;
+	uint32                             _shadowRB;//阴影render buffer
+	uint32                             _frameID;//计数，每一帧结束后，自增1
+	uint32                             _defShadowMap;//默认的shadow map texture
+	uint32                             _quadIdxBuf;//particle和overlay公用的index buffer
+	uint32                             _particleVBO;//particle的vertex buffer object
 	MaterialResource                   *_curStageMatLink;
 	CameraNode                         *_curCamera;
 	LightNode                          *_curLight;
@@ -290,10 +291,10 @@ protected:
 	RenderTarget                       *_curRenderTarget;
 	uint32                             _curShaderUpdateStamp;
 	
-	uint32                             _maxAnisoMask;
-	float                              _smSize;
-	float                              _splitPlanes[5];
-	Matrix4f                           _lightMats[4];
+	uint32                             _maxAnisoMask;//更阴影类型相关
+	float                              _smSize;//shadow mapp size
+	float                              _splitPlanes[5];//和阴影计算相关
+	Matrix4f                           _lightMats[4];//和阴影计算相关
 
 	uint32                             _vlPosOnly, _vlOverlay, _vlModel, _vlParticle;
 	ShaderCombination                  _defColorShader;
