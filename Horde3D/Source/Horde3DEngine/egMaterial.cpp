@@ -160,11 +160,11 @@ bool MaterialResource::load( const char *data, int size )
 
 		if( _stricmp( node1.getAttribute( "sRGB", "false" ), "true" ) == 0 ||
 			_stricmp( node1.getAttribute( "sRGB", "0" ), "1" ) == 0 )
-			flags |= ResourceFlags::TexSRGB;
+			flags |= ResourceFlags::TexSRGB;//使用standard RGB
 
 		texMap = Modules::resMan().addResource(
 			ResourceTypes::Texture, node1.getAttribute( "map" ), flags, false );
-
+		//引用纹理资源
 		sampler.texRes = (TextureResource *)Modules::resMan().resolveResHandle( texMap );
 		
 		_samplers.push_back( sampler );

@@ -68,7 +68,7 @@ bool PipelineResource::raiseError( const string &msg, int line )
 	return false;
 }
 
-
+//解析一个stage配置节点
 const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 {
 	stage.id = node.getAttribute( "id", "" );
@@ -79,6 +79,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 	else
 		stage.enabled = true;
 
+	//引用的材质
 	if( strcmp( node.getAttribute( "link", "" ), "" ) != 0 )
 	{
 		uint32 mat = Modules::resMan().addResource(
@@ -93,7 +94,8 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 	while( !node1.isEmpty() )
 	{
 		if( strcmp( node1.getName(), "SwitchTarget" ) == 0 )
-		{
+		{//切换渲染对象，接下来的绘制命令将渲染到别的render buffer
+			//target:render target
 			if( !node1.getAttribute( "target" ) ) return "Missing SwitchTarget attribute 'target'";
 			
 			void *renderTarget = 0x0;
@@ -108,7 +110,10 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			stage.commands.back().params[0].setPtr( renderTarget );
 		}
 		else if( strcmp( node1.getName(), "BindBuffer" ) == 0 )
-		{
+		{//向当前render target绑定一个color buffer或者z-buffer
+			//sampler: 与render target绑定的texture
+			//sourceRT:render target
+			//bufIndx: color buffer的index，如果32，表示z-buffer
 			if( !node1.getAttribute( "sampler" ) || !node1.getAttribute( "sourceRT" ) || !node1.getAttribute( "bufIndex" ) )
 				return "Missing BindBuffer attribute";
 			
@@ -127,7 +132,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			stage.commands.push_back( PipelineCommand( PipelineCommands::UnbindBuffers ) );
 		}
 		else if( strcmp( node1.getName(), "ClearTarget" ) == 0 )
-		{
+		{//for clear color buffer, z-buffer
 			stage.commands.push_back( PipelineCommand( PipelineCommands::ClearTarget ) );
 			vector< PipeCmdParam > &params = stage.commands.back().params;
 			params.resize( 9 );
@@ -168,7 +173,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			}
 		}
 		else if( strcmp( node1.getName(), "DrawGeometry" ) == 0 )
-		{
+		{//绘制场景中的片面,多用于3D模型绘制
 			if( !node1.getAttribute( "context" ) ) return "Missing DrawGeometry attribute 'context'";
 			
 			const char *orderStr = node1.getAttribute( "order", "" );
@@ -185,7 +190,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			params[2].setInt( order );
 		}
 		else if( strcmp( node1.getName(), "DrawOverlays" ) == 0 )
-		{
+		{//绘制overlay，多用于UI绘制
 			if( !node1.getAttribute( "context" ) ) return "Missing DrawOverlays attribute 'context'";
 			
 			stage.commands.push_back( PipelineCommand( PipelineCommands::DrawOverlays ) );
@@ -194,7 +199,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			params[0].setString( node1.getAttribute( "context" ) );
 		}
 		else if( strcmp( node1.getName(), "DrawQuad" ) == 0 )
-		{
+		{//draw all simple quad，多用于简单几何元素绘制
 			if( !node1.getAttribute( "material" ) ) return "Missing DrawQuad attribute 'material'";
 			if( !node1.getAttribute( "context" ) ) return "Missing DrawQuad attribute 'context'";
 			
@@ -208,7 +213,11 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			params[1].setString( node1.getAttribute( "context" ) );
 		}
 		else if( strcmp( node1.getName(), "DoForwardLightLoop" ) == 0 )
-		{
+		{//forward lighting , render all affected geometry
+			//class : ?
+			//context : shader context
+			//order :渲染顺序
+			//noShadows :关闭阴影计算
 			const char *orderStr = node1.getAttribute( "order", "" );
 			int order = RenderingOrder::StateChanges;
 			if( _stricmp( orderStr, "FRONT_TO_BACK" ) == 0 ) order = RenderingOrder::FrontToBack;
@@ -224,7 +233,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 			params[3].setInt( order );
 		}
 		else if( strcmp( node1.getName(), "DoDeferredLightLoop" ) == 0 )
-		{
+		{ //deferred lighting, draw screen-pace quads
 			stage.commands.push_back( PipelineCommand( PipelineCommands::DoDeferredLightLoop ) );
 			vector< PipeCmdParam > &params = stage.commands.back().params;
 			params.resize( 2 );
@@ -253,6 +262,7 @@ const string PipelineResource::parseStage( XMLNode &node, PipelineStage &stage )
 // 		}
 		else if( strcmp( node1.getName(), "SetUniform" ) == 0 )
 		{
+			//设置某材质的uniform值
 			if( !node1.getAttribute( "material" ) ) return "Missing SetUniform attribute 'material'";
 			if( !node1.getAttribute( "uniform" ) ) return "Missing SetUniform attribute 'uniform'";
 			
@@ -311,7 +321,7 @@ RenderTarget *PipelineResource::findRenderTarget( const string &id ) const
 	return 0x0;
 }
 
-
+//创建render target
 bool PipelineResource::createRenderTargets()
 {
 	RenderDeviceInterface *rdi = Modules::renderer().getRenderDevice();
@@ -366,16 +376,17 @@ bool PipelineResource::load( const char *data, int size )
 		XMLNode node2 = node1.getFirstChild( "RenderTarget" );
 		while( !node2.isEmpty() )
 		{
+			//id
 			if( !node2.getAttribute( "id" ) ) return raiseError( "Missing RenderTarget attribute 'id'" );
 			string id = node2.getAttribute( "id" );
-			
+			//enable z-buffer ?
 			if( !node2.getAttribute( "depthBuf" ) ) return raiseError( "Missing RenderTarget attribute 'depthBuf'" );
 			bool depth = false;
 			if( _stricmp( node2.getAttribute( "depthBuf" ), "true" ) == 0 ) depth = true;
-			
+			//number of color buffer
 			if( !node2.getAttribute( "numColBufs" ) ) return raiseError( "Missing RenderTarget attribute 'numColBufs'" );
 			uint32 numBuffers = atoi( node2.getAttribute( "numColBufs" ) );
-			
+			//texture format
 			TextureFormats::List format = TextureFormats::BGRA8;
 			if( node2.getAttribute( "format" ) != 0x0 )
 			{
@@ -388,7 +399,7 @@ bool PipelineResource::load( const char *data, int size )
 				else return raiseError( "Unknown RenderTarget format" );
 			}
 
-			int maxSamples = atoi( node2.getAttribute( "maxSamples", "0" ) );
+			int maxSamples = atoi( node2.getAttribute( "maxSamples", "0" ) );//最大采样数量
 
 			uint32 width = atoi( node2.getAttribute( "width", "0" ) );
 			uint32 height = atoi( node2.getAttribute( "height", "0" ) );

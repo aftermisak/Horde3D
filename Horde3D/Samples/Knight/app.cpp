@@ -25,7 +25,7 @@ using namespace std;
 
 
 KnightSample::KnightSample( int argc, char** argv ) :
-    SampleApplication( argc, argv, "Knight - Horde3D Sample", H3DRenderDevice::OpenGL2 ),
+    SampleApplication( argc, argv, "Knight - Horde3D Sample", H3DRenderDevice::OpenGL4 ),
     _animTime(0),
     _weight(1.0f)
 {
@@ -177,10 +177,10 @@ void KnightSample::update()
 	const float ww = (float)h3dGetNodeParamI(_cam, H3DCamera::ViewportWidthI) /
 		(float)h3dGetNodeParamI(_cam, H3DCamera::ViewportHeightI);
 	const float verts[] = {
-		ww - 0.29f, 0.87f, 0, 1,
-		ww - 0.29f, 0.97f, 0, 0,
-		ww - 0.03f, 0.97f, 1, 0,
-		ww - 0.03f, 0.87f, 1, 1
+		0.1, 0.87f, 0, 1,
+		0.1, 0.97f, 0, 0,
+		0.3, 0.97f, 1, 0,
+		0.3, 0.87f, 1, 1
 	};
 	h3dShowOverlays(verts, 4, 1.f, 1.f, 1.f, 1.f, texture, 0);
 	//end lcx

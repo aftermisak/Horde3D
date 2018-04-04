@@ -98,7 +98,7 @@ bool ComputeBufferResource::load( const char *data, int size )
 {
 	if ( !Resource::load( data, size ) ) return false;
 
-	if ( !Modules::renderer().getRenderDevice()->getCaps().computeShaders )
+	if ( !Modules::renderer().getRenderDevice()->getCaps().computeShaders )//是否支持计算着色器
 		return raiseError( "Compute shaders are not supported on this render device" );
 
 	XMLDoc doc;

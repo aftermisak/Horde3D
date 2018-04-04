@@ -103,14 +103,14 @@ private:
 	bool raiseError( const std::string &msg, int line = -1 );
 
 private:
-	PShaderResource             _shaderRes;
+	PShaderResource             _shaderRes;//use shader
 	uint32                      _combMask;
 	std::string                 _class;
-	std::vector< MatBuffer >	_buffers;
+	std::vector< MatBuffer >	_buffers;//compute buffer
 	std::vector< MatSampler >   _samplers;
 	std::vector< MatUniform >   _uniforms;
 	std::vector< std::string >  _shaderFlags;
-	PMaterialResource           _matLink;
+	PMaterialResource           _matLink;//link another material
 
 	friend class ResourceManager;
 	friend class Renderer;

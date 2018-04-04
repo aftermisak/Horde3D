@@ -93,7 +93,7 @@ protected:
 	TextureTypes::List    _texType;
 	TextureFormats::List  _texFormat;
 	int                   _width, _height, _depth;
-	uint32                _texObject;
+	uint32                _texObject;//texture 
 	uint32                _rbObj;  // Used when texture is renderable
 	bool                  _sRGB;
 	bool                  _hasMipMaps;

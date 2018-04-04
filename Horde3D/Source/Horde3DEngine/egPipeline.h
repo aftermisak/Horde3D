@@ -101,7 +101,7 @@ protected:
 		void   *ptr;
 	};
 
-	BasicType      _basic;
+	BasicType      _basic;//基础类型值
 	std::string    _string; 
 	PResource      _resource;
 };
@@ -109,8 +109,8 @@ protected:
 
 struct PipelineCommand
 {
-	PipelineCommands::List       command;
-	std::vector< PipeCmdParam >  params;
+	PipelineCommands::List       command;//命令类型
+	std::vector< PipeCmdParam >  params;//参数集
 
 	PipelineCommand( PipelineCommands::List	command )
 	{
@@ -121,10 +121,10 @@ struct PipelineCommand
 
 struct PipelineStage
 {
-	std::string                     id;
-	PMaterialResource               matLink;
-	std::vector< PipelineCommand >  commands;
-	bool                            enabled;
+	std::string                     id;//stage id
+	PMaterialResource               matLink;//材质引用
+	std::vector< PipelineCommand >  commands;//命令序列
+	bool                            enabled;//enabled
 
 	PipelineStage() : matLink( 0x0 ), enabled( false ) {}
 };
@@ -132,14 +132,14 @@ struct PipelineStage
 
 struct RenderTarget
 {
-	std::string           id;
-	uint32                numColBufs;
-	TextureFormats::List  format;
-	uint32                width, height;
-	uint32                samples;
+	std::string           id;//名称id
+	uint32                numColBufs; //color buffer的数量
+	TextureFormats::List  format;//render texture format
+	uint32                width, height;//render texture
+	uint32                samples;// 反走样时，多重采样样本数
 	float                 scale;  // Scale factor for FB width and height
-	bool                  hasDepthBuf;
-	uint32                rendBuf;
+	bool                  hasDepthBuf;//是否启用z-buffer
+	uint32                rendBuf;//render buffer id
 
 	RenderTarget()
 	{
@@ -189,8 +189,8 @@ private:
 	void releaseRenderTargets();
 
 private:
-	std::vector< RenderTarget >   _renderTargets;
-	std::vector< PipelineStage >  _stages;
+	std::vector< RenderTarget >   _renderTargets;//存储创建的rendertarget
+	std::vector< PipelineStage >  _stages;//render stages
 	uint32                        _baseWidth, _baseHeight;
 
 	friend class ResourceManager;

@@ -44,9 +44,9 @@ struct GeometryResData
 
 struct VertexDataTan
 {
-	Vec3f  normal;
-	Vec3f  tangent;
-	float  handedness;
+	Vec3f  normal;   //法向量
+	Vec3f  tangent; //正切向量
+	float  handedness;//左右手系？
 };
 
 struct VertexDataStatic		// Vertex data that is usally static
@@ -79,7 +79,7 @@ struct MorphTarget
 };
 
 // =================================================================================================
-
+//3D模型与动画数据
 class GeometryResource : public Resource
 {
 public:
