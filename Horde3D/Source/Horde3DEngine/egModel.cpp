@@ -394,7 +394,7 @@ bool ModelNode::updateGeometry()
 		// Recalculate vertex positions for morph targets
 		for( uint32 i = 0; i < _morphers.size(); ++i )
 		{
-			if( _morphers[i].weight > Math::Epsilon )
+			if( _morphers[i].weight > Math::Epsilon )//有权重才参与改变顶点数据
 			{
 				MorphTarget &mt = _geometryRes->_morphTargets[_morphers[i].index];
 				float weight = _morphers[i].weight;

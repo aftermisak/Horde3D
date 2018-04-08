@@ -76,7 +76,7 @@ struct Morpher	// Morph modifier
 {
 	std::string  name;
 	uint32       index;  // Index of morph target in Geometry resource
-	float        weight;
+	float        weight; //起作用的权重，同一时刻会有多个Morpher对model的顶点数据其作用
 };
 
 // =================================================================================================
@@ -127,14 +127,14 @@ protected:
 	void onFinishedUpdate();
 
 protected:
-	PGeometryResource             _geometryRes;
+	PGeometryResource             _geometryRes; //dynamic data, _baseGeoRes do not change state
 	PGeometryResource             _baseGeoRes;	// NULL if model does not have a private geometry copy
 	float                         _lodDist1, _lodDist2, _lodDist3, _lodDist4;
 	
 	std::vector< MeshNode * >     _meshList;  // List of the model's meshes
-	std::vector< JointNode * >    _jointList;
+	std::vector< JointNode * >    _jointList; // List of the model's joints
 	std::vector< Vec4f >          _skinMatRows;
-	AnimationController           _animCtrl;
+	AnimationController           _animCtrl; //animation controller
 
 	Vec4f                         _customInstData[ModelCustomVecCount];
 

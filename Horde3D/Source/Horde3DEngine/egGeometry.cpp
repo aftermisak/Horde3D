@@ -170,16 +170,17 @@ bool GeometryResource::load( const char *data, int size )
 	// Check header and version
 	char id[4];
 	pData = elemcpy_le(id, (char*)(pData), 4);
-	if( id[0] != 'H' || id[1] != '3' || id[2] != 'D' || id[3] != 'G' )
+	if( id[0] != 'H' || id[1] != '3' || id[2] != 'D' || id[3] != 'G' )//check hord3d head info
 		return raiseError( "Invalid geometry resource" );
 
 	uint32 version;
 	pData = elemcpy_le(&version, (uint32*)(pData), 1);
+	//check version
 	if( version != 5 ) return raiseError( "Unsupported version of geometry file" );
 
 	// Load joints
 	uint32 count;
-	pData = elemcpy_le(&count, (uint32*)(pData), 1);
+	pData = elemcpy_le(&count, (uint32*)(pData), 1);//joint count
 
 	if ( count > Modules::renderer().getRenderDevice()->getCaps().maxJointCount )
 	{
@@ -187,8 +188,8 @@ bool GeometryResource::load( const char *data, int size )
 									  Modules::renderer().getRenderDevice()->getCaps().maxJointCount );
 	}
 
-	_joints.resize( count );
-	for( uint32 i = 0; i < count; ++i )
+	_joints.resize( count ); 
+	for( uint32 i = 0; i < count; ++i )//load joint data
 	{
 		Joint &joint = _joints[i];
 		
@@ -206,9 +207,9 @@ bool GeometryResource::load( const char *data, int size )
 
 	_vertCount = streamSize;
 	_vertPosData = new Vec3f[_vertCount];
-	_vertTanData = new VertexDataTan[_vertCount];
-	_vertStaticData = new VertexDataStatic[_vertCount];
-	Vec3f *bitangents = new Vec3f[_vertCount];
+	_vertTanData = new VertexDataTan[_vertCount];//normal tan data, these data could change by morph target??
+	_vertStaticData = new VertexDataStatic[_vertCount];//texture coordinates, joint and joint weight are static datas.
+	Vec3f *bitangents = new Vec3f[_vertCount];//副切线，用于光照
 
 	// Init with default data
 	memset( _vertPosData, 0, _vertCount * sizeof( Vec3f ) );
@@ -228,7 +229,7 @@ bool GeometryResource::load( const char *data, int size )
 		switch( streamID )
 		{
 		case 0:		// Position
-			if( streamElemSize != 12 )
+			if( streamElemSize != 12 )// ??
 			{
 				errormsg = "Invalid position base stream";
 				break;
@@ -248,7 +249,7 @@ bool GeometryResource::load( const char *data, int size )
 			}
 			for( uint32 j = 0; j < streamSize; ++j )
 			{
-				pData = elemcpy_le(&sh, (short*)(pData), 1); _vertTanData[j].normal.x = sh / 32767.0f;
+				pData = elemcpy_le(&sh, (short*)(pData), 1); _vertTanData[j].normal.x = sh / 32767.0f;//normalize
 				pData = elemcpy_le(&sh, (short*)(pData), 1); _vertTanData[j].normal.y = sh / 32767.0f;
 				pData = elemcpy_le(&sh, (short*)(pData), 1); _vertTanData[j].normal.z = sh / 32767.0f;
 			}
@@ -344,7 +345,7 @@ bool GeometryResource::load( const char *data, int size )
 	}
 
 	// Prepare bitangent data (TODO: Should be done in ColladaConv)
-	for( uint32 i = 0; i < _vertCount; ++i )
+	for( uint32 i = 0; i < _vertCount; ++i ) //根据法线，正切线，副切线计算左右手系
 	{
 		_vertTanData[i].handedness = _vertTanData[i].normal.cross( _vertTanData[i].tangent ).dot( bitangents[i] ) < 0 ? -1.0f : 1.0f;
 	}
@@ -467,7 +468,7 @@ bool GeometryResource::load( const char *data, int size )
 	// Find AABB of skeleton in bind pose
 	for( uint32 i = 0; i < (uint32)_joints.size(); ++i )
 	{
-		Vec3f pos = _joints[i].invBindMat.inverted() * Vec3f( 0, 0, 0 );
+		Vec3f pos = _joints[i].invBindMat.inverted() * Vec3f( 0, 0, 0 );//通过逆矩阵(??)求出关节在模型中的位置
 		if( pos.x < _skelAABB.min.x ) _skelAABB.min.x = pos.x;
 		if( pos.y < _skelAABB.min.y ) _skelAABB.min.y = pos.y;
 		if( pos.z < _skelAABB.min.z ) _skelAABB.min.z = pos.z;
@@ -486,7 +487,7 @@ bool GeometryResource::load( const char *data, int size )
 	if( _vertCount > 0 && _indexCount > 0 )
 	{
 		RenderDeviceInterface *rdi = Modules::renderer().getRenderDevice();
-
+		//create vertex array object, bind buffer info by glVertexAttribPointer
 		_geoObj = rdi->beginCreatingGeometry( Modules::renderer().getDefaultVertexLayout( DefaultVertexLayouts::Model ) );
 
 		// Upload indices

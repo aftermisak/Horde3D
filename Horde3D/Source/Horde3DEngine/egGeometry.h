@@ -51,10 +51,10 @@ struct VertexDataTan
 
 struct VertexDataStatic		// Vertex data that is usally static
 {
-	float  u0, v0;
-	float  jointVec[4];		// Float faster than int for some GPUs
-	float  weightVec[4];
-	float  u1, v1;
+	float  u0, v0; //Texture Coord Set 1
+	float  jointVec[4];		// 关节 // Float faster than int for some GPUs
+	float  weightVec[4]; //权重
+	float  u1, v1; //Texture Coord Set 2
 };
 
 
@@ -79,7 +79,7 @@ struct MorphTarget
 };
 
 // =================================================================================================
-//3D模型与动画数据
+//3D模型与morph taget数据
 class GeometryResource : public Resource
 {
 public:
@@ -124,19 +124,19 @@ private:
 private:
 	static int                  mappedWriteStream;
 	
-	uint32                      _indexBuf, _posVBuf, _tanVBuf, _staticVBuf;
-	uint32						_geoObj;
+	uint32                      _indexBuf, _posVBuf, _tanVBuf, _staticVBuf;//look _indexData _vertPosData _vertTanData _vertStaticData
+	uint32						_geoObj;// vertex array object
 
 	uint32                      _indexCount, _vertCount;
-	bool                        _16BitIndices;
-	char                        *_indexData;
-	Vec3f                       *_vertPosData;
-	VertexDataTan               *_vertTanData;
-	VertexDataStatic            *_vertStaticData;
+	bool                        _16BitIndices;//_indexData是不是每16位一个index，否则是32位
+	char                        *_indexData; //index data
+	Vec3f                       *_vertPosData; //vertex data
+	VertexDataTan               *_vertTanData; //normal tan data
+	VertexDataStatic            *_vertStaticData;//joint weight, texture coordinates data
 	
 	std::vector< Joint >        _joints;
-	BoundingBox                 _skelAABB;
-	std::vector< MorphTarget >  _morphTargets;
+	BoundingBox                 _skelAABB; // model bounding box
+	std::vector< MorphTarget >  _morphTargets; //mesh animation info ?
 	uint32                      _minMorphIndex, _maxMorphIndex;
 
 	friend class Renderer;
