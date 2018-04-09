@@ -95,11 +95,11 @@ private:
 	Vec3f                  _absPos, _spotDir;
 
 	PMaterialResource      _materialRes;
-	std::string            _lightingContext, _shadowContext;
-	float                  _radius, _fov;
-	Vec3f                  _diffuseCol;
+	std::string            _lightingContext, _shadowContext;//两套不同的shader模式
+	float                  _radius, _fov;//半径是指光照最远长度？； 出光角度？
+	Vec3f                  _diffuseCol; //环境光色
 	float                  _diffuseColMult;
-	uint32                 _shadowMapCount;
+	uint32                 _shadowMapCount;//阴影纹理数量
 	float                  _shadowSplitLambda, _shadowMapBias;
 
 	std::vector< uint32 >  _occQueries;

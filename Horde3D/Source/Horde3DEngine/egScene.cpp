@@ -336,7 +336,12 @@ struct RenderQueueItemCompFunc
 		{ return a.sortKey < b.sortKey; }
 };
 
-
+/*
+	更新选项队列(排序后)
+	frustum1是视区区域
+	frustum2 如果有的话，区域外的几点不会影响渲染队列， 这个参数多用于光照渲染是光的可见范围
+	filterIgnore flag用以忽略一些节点
+*/
 void SpatialGraph::updateQueues( const Frustum &frustum1, const Frustum *frustum2, RenderingOrder::List order,
                                  uint32 filterIgnore, bool lightQueue, bool renderQueue )
 {
@@ -361,7 +366,7 @@ void SpatialGraph::updateQueues( const Frustum &frustum1, const Frustum *frustum
 			if( !frustum1.cullBox( node->_bBox ) &&
 				(frustum2 == 0x0 || !frustum2->cullBox( node->_bBox )) )
 			{
-				if( node->_lodSupported )
+				if( node->_lodSupported )//lod优化
 				{
 					uint32 curLod = node->calcLodLevel( camPos );
 					if ( !node->checkLodCorrectness( curLod ) ) continue;
@@ -371,7 +376,7 @@ void SpatialGraph::updateQueues( const Frustum &frustum1, const Frustum *frustum
 
 				switch( order )
 				{
-				case RenderingOrder::StateChanges:
+				case RenderingOrder::StateChanges://??
 					sortKey = node->_sortKey;
 					break;
 				case RenderingOrder::FrontToBack:

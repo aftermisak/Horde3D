@@ -649,7 +649,7 @@ bool Renderer::setMaterialRec( MaterialResource *materialRes, const string &shad
 		if( shaderRes == 0x0 ) return false;	
 	
 		// Find context
-		ShaderContext *context = shaderRes->findContext( shaderContext );
+		ShaderContext *context = shaderRes->findContext( shaderContext );//取得相应的shader context
 		if( context == 0x0 ) return false;
 		
 		// Set shader combination
@@ -658,7 +658,7 @@ bool Renderer::setMaterialRec( MaterialResource *materialRes, const string &shad
 		if( _curShader == 0x0 || _renderDevice->_curShaderId == 0 ) return false;
 
 		// Setup standard shader uniforms
-		commitGeneralUniforms();
+		commitGeneralUniforms();//提交引擎內建通用uniform到render device
 
 		// Configure depth mask
 		_renderDevice->setDepthMask( context->writeDepth );
@@ -676,7 +676,7 @@ bool Renderer::setMaterialRec( MaterialResource *materialRes, const string &shad
 		_renderDevice->setDepthTest( context->depthTest );
 		_renderDevice->setDepthFunc( (RDIDepthFunc)context->depthFunc );
 
-		// Configure alpha-to-coverage
+		// Configure alpha-to-coverage ？？
 		_renderDevice->setAlphaToCoverage( context->alphaToCoverage && Modules::config().sampleCount > 0 );
 
 		// Configure how many vertices form a patch in tesselation shader
@@ -837,7 +837,11 @@ bool Renderer::setMaterialRec( MaterialResource *materialRes, const string &shad
 	return result;
 }
 
+/*
+  切换将制定材质的shader context, 切换会提交所有用到的uniform，设置新的渲染参数等。。
+如果 materialRes未NULL，unbindProgram 并且重置(混合模式，深度测试等)渲染参数
 
+*/
 bool Renderer::setMaterial( MaterialResource *materialRes, const string &shaderContext )
 {
 	if( materialRes == 0x0 )
@@ -864,7 +868,7 @@ bool Renderer::setMaterial( MaterialResource *materialRes, const string &shaderC
 // =================================================================================================
 // Shadowing
 // =================================================================================================
-
+//创建一个render buffer -> _shadowRB
 bool Renderer::createShadowRB( uint32 width, uint32 height )
 {
 	_shadowRB = _renderDevice->createRenderBuffer( width, height, TextureFormats::BGRA8, true, 0, 0 );
@@ -872,13 +876,16 @@ bool Renderer::createShadowRB( uint32 width, uint32 height )
 	return _shadowRB != 0;
 }
 
-
+//destroy _shadowRB
 void Renderer::releaseShadowRB()
 {
 	if( _shadowRB ) _renderDevice->destroyRenderBuffer( _shadowRB );
 }
 
-
+/*
+	bind shadow map
+	如果不用shadowmap(noShadows参数为false)，或者当前光shadow map数量为0， 则会绑定一个默认的shadow map
+*/
 void Renderer::setupShadowMap( bool noShadows )
 {
 	uint32 sampState = SS_FILTER_BILINEAR | SS_ANISO1 | SS_ADDR_CLAMPCOL | SS_COMP_LEQUAL;
@@ -1002,11 +1009,11 @@ void Renderer::updateShadowMap()
 	_renderDevice->getRenderBufferDimensions( _shadowRB, &shadowRTWidth, &shadowRTHeight );
 
 	_renderDevice->setViewport( 0, 0, shadowRTWidth, shadowRTHeight );
-	_renderDevice->setRenderBuffer( _shadowRB );
+	_renderDevice->setRenderBuffer( _shadowRB );//将shadow buffer作为渲染对象
 	
-	_renderDevice->setColorWriteMask( false );
-	_renderDevice->setDepthMask( true );
-	_renderDevice->clear( CLR_DEPTH, 0x0, 1.f );
+	_renderDevice->setColorWriteMask( false );//disable color-buffer write
+	_renderDevice->setDepthMask( true );// enable z-buffer write
+	_renderDevice->clear( CLR_DEPTH, 0x0, 1.f );//set z value all to 1.0f
 
 	// ********************************************************************************************
 	// Cascaded Shadow Maps
@@ -1015,14 +1022,14 @@ void Renderer::updateShadowMap()
 	// Find AABB of lit geometry
 	BoundingBox aabb;
 	Modules::sceneMan().updateQueues( _curCamera->getFrustum(), &_curLight->getFrustum(),
-		RenderingOrder::None, SceneNodeFlags::NoDraw | SceneNodeFlags::NoCastShadow, false, true );
-	for( size_t j = 0, s = Modules::sceneMan().getRenderQueue().size(); j < s; ++j )
+		RenderingOrder::None, SceneNodeFlags::NoDraw | SceneNodeFlags::NoCastShadow, false, true );//刷新渲染队列，不会考虑不产生阴影的节点
+	for( size_t j = 0, s = Modules::sceneMan().getRenderQueue().size(); j < s; ++j )//求出一个包围所有渲染对象的box
 	{
 		aabb.makeUnion( Modules::sceneMan().getRenderQueue()[j].node->getBBox() );
 	}
 
 	// Find depth range of lit geometry
-	float minDist = Math::MaxFloat, maxDist = 0.0f;
+	float minDist = Math::MaxFloat, maxDist = 0.0f;//根据box算出视坐标下最大和最小的z坐标,
 	for( uint32 i = 0; i < 8; ++i )
 	{
 		float dist = -(_curCamera->getViewMat() * aabb.getCorner( i )).z;
@@ -1032,8 +1039,8 @@ void Renderer::updateShadowMap()
 
 	// Don't adjust near plane; this means less precision if scene is far away from viewer but that
 	// shouldn't be too noticeable and brings better performance since the nearer split volumes are empty
-	minDist = _curCamera->_frustNear;
-	
+	minDist = _curCamera->_frustNear;//最小不能小于near，这个应该是后面改的
+	//lcxing
 	// Calculate split distances using PSSM scheme
 	const float nearDist = maxf( minDist, _curCamera->_frustNear );
 	const float farDist = maxf( maxDist, minDist + 0.01f );
@@ -1158,7 +1165,9 @@ void Renderer::unregisterOccSet( int occSet )
 		_occSets[occSet] = 0;
 }
 
-
+/*
+	绘制指定集合中所有遮挡测试的box，来
+*/
 void Renderer::drawOccProxies( uint32 list )
 {
 	ASSERT( list < 2 );
@@ -1167,24 +1176,25 @@ void Renderer::drawOccProxies( uint32 list )
 	_renderDevice->getColorWriteMask( prevColorMask );
 	_renderDevice->getDepthMask( prevDepthMask );
 	
-	setMaterial( 0x0, "" );
-	_renderDevice->setColorWriteMask( false );
+	setMaterial( 0x0, "" );//un bind program, reset render state
+	_renderDevice->setColorWriteMask( false );//关闭写color buffer，遮挡测试绘制，不更新color buffer
 	_renderDevice->setDepthMask( false );
+	//关闭写z-buffer，绘制遮挡测试的物体时，不更新z-buffer，测试渲染间各不影响，也不影响正常的渲染， 但是z-test需要开启，因为实现基于深度测试
 	
-	setShaderComb( &Modules::renderer()._defColorShader );
-	commitGeneralUniforms();
+	setShaderComb( &Modules::renderer()._defColorShader );//bind a kind of defaul program( shader combo )
+	commitGeneralUniforms();//commit built-in uniforms for program change
 // 	_renderDevice->setVertexBuffer( 0, _vbCube, 0, 12 );
 // 	_renderDevice->setIndexBuffer( _ibCube, IDXFMT_16 );
 // 	_renderDevice->setVertexLayout( _vlPosOnly );
-	_renderDevice->setGeometry( _cubeGeo );
+	_renderDevice->setGeometry( _cubeGeo );//bind vertex array object for general cube drawing.
 
 	// Draw occlusion proxies
 	for( size_t i = 0, s = _occProxies[list].size(); i < s; ++i )
 	{
 		OccProxy &proxy = _occProxies[list][i];
-
-		_renderDevice->beginQuery( proxy.queryObj );
 		
+		_renderDevice->beginQuery( proxy.queryObj );
+		//尝试画一个box，如果该box没有样点通过深度测试，表示都被遮挡，默认顶点数据都是单位话的，所以这里用box信息对图元进行变换
 		Matrix4f mat = Matrix4f::TransMat( proxy.bbMin.x, proxy.bbMin.y, proxy.bbMin.z ) *
 			Matrix4f::ScaleMat( proxy.bbMax.x - proxy.bbMin.x, proxy.bbMax.y - proxy.bbMin.y, proxy.bbMax.z - proxy.bbMin.z );
 		_renderDevice->setShaderConst( _curShader->uni_worldMat, CONST_FLOAT44, &mat.x[0] );
@@ -1193,6 +1203,7 @@ void Renderer::drawOccProxies( uint32 list )
 		_renderDevice->drawIndexed( PRIM_TRILIST, 0, 36, 0, 8 );
 
 		_renderDevice->endQuery( proxy.queryObj );
+		//遮挡测试的结果在哪里？？
 	}
 
 	setShaderComb( 0x0 );
@@ -1290,7 +1301,10 @@ void Renderer::drawOverlays( const string &shaderContext )
 // =================================================================================================
 // Pipeline Functions
 // =================================================================================================
-
+/*
+	绑定一个texture
+	rbObj + bufInx 指向了一个texture， 其名称为sampler
+*/
 void Renderer::bindPipeBuffer( uint32 rbObj, const string &sampler, uint32 bufIndex )
 {
 	if( rbObj == 0 )
@@ -1355,7 +1369,7 @@ void Renderer::clear( bool depth, bool buf0, bool buf1, bool buf2, bool buf3,
 	_renderDevice->setScissorTest( false );
 }
 
-
+//用指定材质绘制简单三角形，正交投影。基本上就是跟overlay作用差不多
 void Renderer::drawFSQuad( Resource *matRes, const string &shaderContext )
 {
 	if( matRes == 0x0 || matRes->getType() != ResourceTypes::Material ) return;
@@ -1383,35 +1397,37 @@ void Renderer::drawGeometry( const string &shaderContext, const string &theClass
 	drawRenderables( shaderContext, theClass, false, &_curCamera->getFrustum(), 0x0, order, occSet );
 }
 
-
+/*
+	照明 lcxing
+*/
 void Renderer::drawLightGeometry( const string &shaderContext, const string &theClass,
                                   bool noShadows, RenderingOrder::List order, int occSet )
 {
 	Modules::sceneMan().updateQueues( _curCamera->getFrustum(), 0x0, RenderingOrder::None,
-	                                  SceneNodeFlags::NoDraw, true, false );
+	                                  SceneNodeFlags::NoDraw, true, false );//刷新照明队列
 	
 	GPUTimer *timer = Modules::stats().getGPUTimer( EngineStats::FwdLightsGPUTime );
-	if( Modules::config().gatherTimeStats ) timer->beginQuery( _frameID );
+	if( Modules::config().gatherTimeStats ) timer->beginQuery( _frameID );//time query if need
 	
 	for( size_t i = 0, s = Modules::sceneMan().getLightQueue().size(); i < s; ++i )
 	{
-		_curLight = (LightNode *)Modules::sceneMan().getLightQueue()[i];
+		_curLight = (LightNode *)Modules::sceneMan().getLightQueue()[i];//set cur light for render
 
 		// Check if light is not visible
 		if( _curCamera->getFrustum().cullFrustum( _curLight->getFrustum() ) ) continue;
 
 		// Check if light is occluded
-		if( occSet >= 0 )
+		if( occSet >= 0 )//迷之难懂
 		{
 			if( occSet > (int)_curLight->_occQueries.size() - 1 )
 			{
-				_curLight->_occQueries.resize( occSet + 1, 0 );
+				_curLight->_occQueries.resize( occSet + 1, 0 );//resize到足够occSet，初始为0
 				_curLight->_lastVisited.resize( occSet + 1, 0 );
 			}
 			if( _curLight->_occQueries[occSet] == 0 )
 			{
-				_curLight->_occQueries[occSet] = _renderDevice->createOcclusionQuery();
-				_curLight->_lastVisited[occSet] = 0;
+				_curLight->_occQueries[occSet] = _renderDevice->createOcclusionQuery();//创建查询对象
+				_curLight->_lastVisited[occSet] = 0;//访问重置？？
 			}
 			else
 			{
@@ -1420,7 +1436,7 @@ void Renderer::drawLightGeometry( const string &shaderContext, const string &the
 					_curLight->_lastVisited[occSet] = Modules::renderer().getFrameID();
 				
 					Vec3f bbMin, bbMax;
-					_curLight->getFrustum().calcAABB( bbMin, bbMax );
+					_curLight->getFrustum().calcAABB( bbMin, bbMax );//box of frustum
 					
 					// Check that viewer is outside light bounds
 					if( nearestDistToAABB( _curCamera->getFrustum().getOrigin(), bbMin, bbMax ) > 0 )
@@ -1428,7 +1444,7 @@ void Renderer::drawLightGeometry( const string &shaderContext, const string &the
 						Modules::renderer().pushOccProxy( 1, bbMin, bbMax, _curLight->_occQueries[occSet] );
 
 						// Check query result from previous frame
-						if( _renderDevice->getQueryResult( _curLight->_occQueries[occSet] ) < 1 )
+						if( _renderDevice->getQueryResult( _curLight->_occQueries[occSet] ) < 1 )//前一帧被完全遮挡
 						{
 							continue;
 						}
@@ -1452,7 +1468,7 @@ void Renderer::drawLightGeometry( const string &shaderContext, const string &the
 		}
 		else
 		{
-			setupShadowMap( true );
+			setupShadowMap( true );//use default texture
 		}
 		
 		// Calculate light screen space position
@@ -1632,7 +1648,11 @@ void Renderer::dispatchCompute( MaterialResource *materialRes, const std::string
 // =================================================================================================
 // Scene Node Rendering Functions
 // =================================================================================================
-
+/*
+	绘制module中当前渲染队列
+	theClass
+	
+*/
 void Renderer::drawRenderables( const string &shaderContext, const string &theClass, bool debugView,
                                 const Frustum *frust1, const Frustum *frust2, RenderingOrder::List order,
                                 int occSet )
@@ -1646,7 +1666,7 @@ void Renderer::drawRenderables( const string &shaderContext, const string &theCl
 	// Set global render states
 	if( Modules::config().wireframeMode && !Modules::config().debugViewMode )
 	{
-		_renderDevice->setCullMode( RS_CULL_NONE );
+		_renderDevice->setCullMode( RS_CULL_NONE );//线模式不需要face culling
 		_renderDevice->setFillMode( RS_FILL_WIREFRAME );
 	}
 
@@ -1656,10 +1676,10 @@ void Renderer::drawRenderables( const string &shaderContext, const string &theCl
 	{
 		lastItem = firstItem;
 		while( (lastItem + 1 < queueSize) && (renderQueue[firstItem].type == renderQueue[lastItem + 1].type) )
-		{
+		{  //累积 连续且同类型 的渲染项
 			++lastItem;
 		}
-		
+		//回调渲染函数
 		for( uint32 i = 0, si = (uint32)_renderFuncRegistry.size(); i < si; ++i )
 		{
 			if( _renderFuncRegistry[i].nodeType == renderQueue[firstItem].type )
@@ -1670,7 +1690,7 @@ void Renderer::drawRenderables( const string &shaderContext, const string &theCl
 			}
 		}
 
-		firstItem = lastItem + 1;
+		firstItem = lastItem + 1;//go next 
 	} while( firstItem < queueSize );
 
 	// Reset states

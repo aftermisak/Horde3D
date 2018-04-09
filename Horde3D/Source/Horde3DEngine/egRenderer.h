@@ -182,7 +182,7 @@ public:
 	void setShaderComb( ShaderCombination *sc );
 	//提交一堆预定义uniform(如果标记发生了改变需要提交)
 	void commitGeneralUniforms();
-	//设置一个新的材质 this->setMaterialRec
+	//切换到指定的program的相应shader组。
 	bool setMaterial( MaterialResource *materialRes, const std::string &shaderContext );
 	
 	bool createShadowRB( uint32 width, uint32 height );
@@ -255,7 +255,7 @@ protected:
 	
 	RenderDeviceInterface		       *_renderDevice;
 
-	std::vector< RenderFuncListItem >  _renderFuncRegistry;//保存着一些回调监听，在某个渲染的函数中，会回调
+	std::vector< RenderFuncListItem >  _renderFuncRegistry;//为不同的节点类型注册不同的渲染的实现函数，渲染的时候被调用
 	
 	unsigned char                      *_scratchBuf;//一个堆上的buff，但不是Render内部用，提供给接口给外不用
 	uint32                             _scratchBufSize;//上面那个buff的当前容量
