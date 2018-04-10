@@ -1040,7 +1040,7 @@ void Renderer::updateShadowMap()
 	// Don't adjust near plane; this means less precision if scene is far away from viewer but that
 	// shouldn't be too noticeable and brings better performance since the nearer split volumes are empty
 	minDist = _curCamera->_frustNear;//最小不能小于near，这个应该是后面改的
-	//lcxing
+	
 	// Calculate split distances using PSSM scheme
 	const float nearDist = maxf( minDist, _curCamera->_frustNear );
 	const float farDist = maxf( maxDist, minDist + 0.01f );
@@ -1065,7 +1065,7 @@ void Renderer::updateShadowMap()
 	
 	// Split viewing frustum into slices and render shadow maps
 	Frustum frustum;
-	for( uint32 i = 0; i < numMaps; ++i )
+	for( uint32 i = 0; i < numMaps; ++i )//多级阴影位置
 	{
 		// Create frustum slice
 		if( !_curCamera->_orthographic )
@@ -1398,7 +1398,7 @@ void Renderer::drawGeometry( const string &shaderContext, const string &theClass
 }
 
 /*
-	照明 lcxing
+	照明
 */
 void Renderer::drawLightGeometry( const string &shaderContext, const string &theClass,
                                   bool noShadows, RenderingOrder::List order, int occSet )

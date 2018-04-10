@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\from_github\Horde3D\Horde3D\Source\Horde3DUtils\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="F:\from_github\Horde3D\Horde3D\Bindings\C++\Horde3DUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\Horde3D\Source\Horde3DUtils\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6E5C5626-229E-3218-93FB-BEAF206EF18F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9F02E18A-2E17-3176-A34F-FF7E15956B6D}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

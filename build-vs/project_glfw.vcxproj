@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D970001F-2618-3F34-837E-4749E1505D58}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>project_glfw</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw\include;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine;F:\from_github\Horde3D\Horde3D\Source\Shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw\include;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine;F:\from_github\Horde3D\Horde3D\Source\Shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw\include;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine;F:\from_github\Horde3D\Horde3D\Source\Shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw\include;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine;F:\from_github\Horde3D\Horde3D\Source\Shared;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule F:/from_github/Horde3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -HF:/from_github/Horde3D -BF:/from_github/Horde3D/build-vs --check-stamp-file F:/from_github/Horde3D/build-vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/CMakeLists.txt;F:\from_github\Horde3D\CMakeLists.txt;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystem.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompilerABI.c;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.c;F:\from_github\Horde3D\CMake\Modules\FindGLFW.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\RepositoryInfo.txt.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject-download.cmake.in;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt.in;F:\from_github\Horde3D\Extensions\Extensions.txt;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_include.h.in;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_install.h.in;F:\from_github\Horde3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule F:/from_github/Horde3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -HF:/from_github/Horde3D -BF:/from_github/Horde3D/build-vs --check-stamp-file F:/from_github/Horde3D/build-vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/CMakeLists.txt;F:\from_github\Horde3D\CMakeLists.txt;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystem.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompilerABI.c;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.c;F:\from_github\Horde3D\CMake\Modules\FindGLFW.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\RepositoryInfo.txt.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject-download.cmake.in;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt.in;F:\from_github\Horde3D\Extensions\Extensions.txt;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_include.h.in;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_install.h.in;F:\from_github\Horde3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule F:/from_github/Horde3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -HF:/from_github/Horde3D -BF:/from_github/Horde3D/build-vs --check-stamp-file F:/from_github/Horde3D/build-vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/CMakeLists.txt;F:\from_github\Horde3D\CMakeLists.txt;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystem.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompilerABI.c;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.c;F:\from_github\Horde3D\CMake\Modules\FindGLFW.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\RepositoryInfo.txt.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject-download.cmake.in;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt.in;F:\from_github\Horde3D\Extensions\Extensions.txt;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_include.h.in;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_install.h.in;F:\from_github\Horde3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule F:/from_github/Horde3D/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -HF:/from_github/Horde3D -BF:/from_github/Horde3D/build-vs --check-stamp-file F:/from_github/Horde3D/build-vs/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/CMakeLists.txt;F:\from_github\Horde3D\CMakeLists.txt;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystem.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInitialize.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-Determine-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerId.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCompilerIdDetection.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\TI-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CompilerId\VS-10.vcxproj.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeFindBinUtils.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeSystemSpecificInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeGenericSystem.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\WindowsPaths.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-C.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeRCInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestRCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompilerABI.c;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeLanguageInformation.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC-CXX.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Platform\Windows-MSVC.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCommonLanguageInclude.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeTestCompilerCommon.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompilerABI.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeParseImplicitLinkInfo.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompilerABI.cpp;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeDetermineCompileFeatures.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Internal\FeatureTesting.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;F:\from_github\Horde3D\build-vs\CMakeFiles\feature_tests.cxx;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CMakeCXXCompiler.cmake.in;F:\from_github\Horde3D\build-vs\CMakeFiles\3.9.1\CMakeCXXCompiler.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\CheckFunctionExists.c;F:\from_github\Horde3D\CMake\Modules\FindGLFW.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject.cmake;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\RepositoryInfo.txt.in;D:\cmake-3.9.1-win64-x64\share\cmake-3.9\Modules\ExternalProject-download.cmake.in;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt.in;F:\from_github\Horde3D\Extensions\Extensions.txt;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_include.h.in;F:\from_github\Horde3D\Horde3D\Source\Horde3DEngine\egExtensions_auto_install.h.in;F:\from_github\Horde3D\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-mkdir.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Creating directories for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Creating directories for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Creating directories for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Creating directories for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/tmp
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/project_glfw-prefix/src
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-mkdir
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-mkdir.rule;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-download.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing download step (download, verify and extract) for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-download-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-download.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\project_glfw-urlinfo.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing download step (download, verify and extract) for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-download-Release.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-download.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\project_glfw-urlinfo.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing download step (download, verify and extract) for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-download-MinSizeRel.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-download.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\project_glfw-urlinfo.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing download step (download, verify and extract) for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-download-RelWithDebInfo.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-download
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-download.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\project_glfw-urlinfo.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-update.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No update step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-update.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No update step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-update.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No update step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-update.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No update step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-update
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-update.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-patch.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">No patch step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-patch.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">No patch step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-patch.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">No patch step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-patch.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">No patch step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E echo_append
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-patch
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-patch.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-configure.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing configure step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-configure-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-configure.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing configure step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-configure-Release.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-configure.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing configure step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-configure-MinSizeRel.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-configure.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing configure step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-configure-RelWithDebInfo.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-configure
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-configure.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\tmp\project_glfw-cfgcmd.txt;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-build.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing build step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-build-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-build.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing build step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-build-Release.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-build.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing build step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-build-MinSizeRel.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-build.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing build step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-build-RelWithDebInfo.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-build.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-install.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Performing install step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-install-Debug.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-install.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Performing install step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-install-Release.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-install.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Performing install step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-install-MinSizeRel.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-install.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Performing install step for 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+cd F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build
+if %errorlevel% neq 0 goto :cmEnd
+F:
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -Dconfig=$(Configuration) -P F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/project_glfw-install-RelWithDebInfo.cmake
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-install
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/dd2c5f3280b7d8938ed24750cdeb2242/project_glfw-install.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\fe87d843c890304db8f691819b58fde9\project_glfw-complete.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Completed 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)/project_glfw-complete
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fe87d843c890304db8f691819b58fde9/project_glfw-complete.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Completed 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)/project_glfw-complete
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fe87d843c890304db8f691819b58fde9/project_glfw-complete.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Completed 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)/project_glfw-complete
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fe87d843c890304db8f691819b58fde9/project_glfw-complete.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Completed 'project_glfw'</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E make_directory F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/CMakeFiles/$(Configuration)/project_glfw-complete
+if %errorlevel% neq 0 goto :cmEnd
+D:\cmake-3.9.1-win64-x64\bin\cmake.exe -E touch F:/from_github/Horde3D/build-vs/project_glfw-prefix/src/project_glfw-stamp/$(Configuration)/project_glfw-done
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fe87d843c890304db8f691819b58fde9/project_glfw-complete.rule;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-mkdir;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-download;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-update;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-patch;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-configure;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-build;F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-stamp\$(Configuration)\project_glfw-install;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\fc8688332028923a150a6bef6849c392\project_glfw.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fc8688332028923a150a6bef6849c392/project_glfw.rule;F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fc8688332028923a150a6bef6849c392/project_glfw.rule;F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fc8688332028923a150a6bef6849c392/project_glfw.rule;F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:/from_github/Horde3D/build-vs/CMakeFiles/fc8688332028923a150a6bef6849c392/project_glfw.rule;F:\from_github\Horde3D\build-vs\CMakeFiles\$(Configuration)\project_glfw-complete;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="F:\from_github\Horde3D\build-vs\ZERO_CHECK.vcxproj">
+      <Project>{B4DD2F88-D304-3511-BCAA-C410206703EF}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

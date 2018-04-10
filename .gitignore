@@ -221,16 +221,16 @@ pip-log.txt
 #################
 ## Windows
 #################
-*.exe
-*.dll
-*.lib
+#*.exe
+#*.dll
+#*.lib
 
 
 #################
 ## Unix
 #################
-*.so
-*.a
+#*.so
+#*.a
 
 #################
 # Build paths
@@ -238,9 +238,22 @@ pip-log.txt
 [Bb]uild*
 Horde3D-[Bb]uild*
 
+!build-vs/
 
 #################
 # Binaries stuff
 ################
 Binaries/*
 Horde3D_Log.html
+
+# begin cmake
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+# end cmake

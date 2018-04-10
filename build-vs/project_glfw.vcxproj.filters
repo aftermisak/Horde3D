@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\CMakeLists.txt" />
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\dd2c5f3280b7d8938ed24750cdeb2242\project_glfw-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\fe87d843c890304db8f691819b58fde9\project_glfw-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\CMakeFiles\fc8688332028923a150a6bef6849c392\project_glfw.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\from_github\Horde3D\build-vs\CMakeFiles\project_glfw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{60575E4F-57F5-3DFF-8C2E-3567EFFA4A4A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

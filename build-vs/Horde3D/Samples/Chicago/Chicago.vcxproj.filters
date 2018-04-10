@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="F:\from_github\Horde3D\Horde3D\Samples\Framework\sampleapp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\from_github\Horde3D\Horde3D\Samples\Chicago\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\from_github\Horde3D\Horde3D\Samples\Chicago\crowd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="F:\from_github\Horde3D\Horde3D\Samples\Chicago\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\Horde3D\Samples\Chicago\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6E5C5626-229E-3218-93FB-BEAF206EF18F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

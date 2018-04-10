@@ -1,0 +1,15 @@
+#version 330
+
+
+uniform vec4 olayColor;
+uniform sampler2D albedoMap;
+in vec2 the_texCoords;
+
+out vec4 fragColor;
+
+void main( void )
+{
+	vec4 albedo = texture2D( albedoMap, the_texCoords );
+	
+	fragColor = albedo * olayColor;
+}

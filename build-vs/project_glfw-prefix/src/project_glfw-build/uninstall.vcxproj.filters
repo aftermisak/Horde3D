@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw\CMakeLists.txt" />
+    <CustomBuild Include="F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build\CMakeFiles\0f67ea83cd2af2928d613988185c461d\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="F:\from_github\Horde3D\build-vs\project_glfw-prefix\src\project_glfw-build\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{163FEB11-96FB-38FC-944B-8DFD3B90D94C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
