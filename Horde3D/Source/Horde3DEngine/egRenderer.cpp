@@ -1757,7 +1757,7 @@ void Renderer::drawMeshes( uint32 firstItem, uint32 lastItem, const string &shad
 					{
 						Modules::renderer().pushOccProxy( 0, meshNode->getBBox().min, meshNode->getBBox().max,
 						                                  meshNode->_occQueries[occSet] );
-						continue;
+						continue;//完全被遮挡
 					}
 					else
 						queryObj = meshNode->_occQueries[occSet];
@@ -1813,7 +1813,7 @@ void Renderer::drawMeshes( uint32 firstItem, uint32 lastItem, const string &shad
 			if ( meshNode->getTessellationStatus() == 1 && tessellationSupported ) drawType = PRIM_PATCHES;
 		}
 		else
-		{
+		{//debug 模式使用另外的shader
 			Modules::renderer().setShaderComb( &Modules::renderer()._defColorShader );
 			Modules::renderer().commitGeneralUniforms();
 			
