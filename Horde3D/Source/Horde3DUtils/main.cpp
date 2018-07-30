@@ -31,6 +31,7 @@
 #include <map>
 #include <fstream>
 #include <iomanip>
+#include <iostream>
 
 using namespace Horde3D;
 using namespace std;
@@ -139,6 +140,11 @@ DLLEXP bool h3dutLoadResourcesFromDisk( const char *contentDir )
 			string fileName = dirs[i] + resourcePaths[h3dGetResType( res )] + "/" + h3dGetResName( res );
 			inf.clear();
 			inf.open( fileName.c_str(), ios::binary );
+#ifdef _DEBUG //add by lcx
+			if (!inf.good()) {
+				std::cerr << "open file Error: " << strerror(errno) << "   " << fileName << std::endl ;
+			}
+#endif
 			if( inf.good() ) break;
 		}
 

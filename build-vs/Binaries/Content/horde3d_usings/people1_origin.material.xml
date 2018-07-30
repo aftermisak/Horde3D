@@ -1,0 +1,4 @@
+<Material>
+	<Shader source="horde3d_usings/people1_origin.shader"/>
+	<Sampler name="albedoMap" map="horde3d_usings/People-loop_00000.png" />
+</Material>

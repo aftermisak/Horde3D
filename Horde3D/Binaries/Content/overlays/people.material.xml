@@ -1,0 +1,5 @@
+<Material>
+	<Shader source="shaders/overlay.shader"/>
+	
+	<Sampler name="albedoMap" map="overlays/People-loop_00000.png" />
+</Material>

@@ -1,0 +1,22 @@
+
+<Pipeline>
+	<Setup>
+		<RenderTarget id="GBUFFER" depthBuf="true" numColBufs="4" format="RGBA16F" scale="1.0" />
+	</Setup>
+	<CommandQueue>
+		<Stage id="Attribpass">
+			<SwitchTarget target="GBUFFER" />
+			<ClearTarget depthBuf="true" colBuf0="true" />
+		</Stage>
+
+		<Stage id="outlineImgs" >
+			<SwitchTarget target="" />
+			<!-- open stencil test -->
+			<DrawOverlays  context="DRAW_ORIGIN" />
+			<!-- <DrawOverlays  context="DRAW_OUTLINE" /> -->
+			<!-- close stencil test -->
+		</Stage>
+
+
+	</CommandQueue>
+</Pipeline>

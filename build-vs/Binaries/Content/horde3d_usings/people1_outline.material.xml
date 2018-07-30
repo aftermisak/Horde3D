@@ -1,0 +1,5 @@
+<Material>
+	<Shader source="horde3d_usings/people1_outline.shader"/>
+	<Sampler name="albedoMap" map="horde3d_usings/People-loop_00000.png" />
+	<Uniform name="outlineColor" a="1.0" b="0" c="0" d="1.0" />
+</Material>

@@ -1,0 +1,18 @@
+#version 330
+
+uniform vec4 outlineColor;
+uniform sampler2D albedoMap;
+in vec2 texCoords;
+
+out vec4 fragColor;
+void main( void ){
+	
+	vec4 albedo = texture2D( albedoMap, texCoords );
+	fragColor = outlineColor
+//	if(albedo.a > 0.0f){
+//		fragColor = outlineColor;
+//	}else{
+//		discard;
+//	}
+	
+}

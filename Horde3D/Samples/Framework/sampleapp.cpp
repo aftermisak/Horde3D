@@ -507,6 +507,7 @@ void SampleApplication::keyEventHandler( int key, int scancode, int action, int 
 
     case GLFW_KEY_F3:
     {
+		
         setPipeline( (_curPipeline + 1) % 3 );
     }
     break;
